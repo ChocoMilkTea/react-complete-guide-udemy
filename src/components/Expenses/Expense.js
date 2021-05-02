@@ -11,6 +11,7 @@ const Expense = (props) => {
         title={key.title}
         amount={key.amount}
         date={key.date}
+        key={index}
       />
     )
   }
