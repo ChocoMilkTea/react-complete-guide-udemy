@@ -18,8 +18,6 @@ const Expense = (props) => {
 
   return (
     <div>
-      <h2>Let's get started</h2>
-
       <Card className="expenses">
         {expenseItems}
       </Card>
