@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Expense from './components/Expenses/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
+
   const expenses = [
     { title: 'Toilet Paper', amount: 94.12, date: new Date(2020, 8, 14) },
     { title: 'New TV', amount: 799.49, date: new Date(2021, 3, 12) },
@@ -9,9 +11,13 @@ const App = () => {
     { title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 6, 12) }
   ]
 
+  const addExpenseHandler = (expense) => {
+    expenses.push(expense);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expense expenses={ expenses }/>
     </div>
   );
