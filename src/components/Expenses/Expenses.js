@@ -8,7 +8,7 @@ const Expenses = (props) => {
   const expenseItems = []
   const [filteredYear, setFilteredYear] = useState('2020');
 
-  for (const [index, key] of props.expenses.entries()) {
+  for (const [index, key] of props.items.entries()) {
     expenseItems.push(
       <ExpenseItem
         title={key.title}
@@ -27,7 +27,8 @@ const Expenses = (props) => {
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={filteredYear} onChangeFilter={onChangeFilterHandler} />
-        {expenseItems}
+        {/* {expenseItems} */}
+        {props.items.map(expense => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} />)};
       </Card>
     </div>
   );
