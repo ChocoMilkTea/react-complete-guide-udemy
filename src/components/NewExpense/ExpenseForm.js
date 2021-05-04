@@ -21,10 +21,15 @@ const ExpenseForm = () => {
     // Update state for combined state
     // Copy userInput key value pair and update
     // Overwrite enteredTitle value
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value
-    })
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value
+    // })
+
+    // Another better combined state
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value }
+    });
   };
 
   const amountChangeHandler = (event) => {
