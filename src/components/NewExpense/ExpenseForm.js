@@ -3,20 +3,20 @@ import './ExpenseForm.css';
 
 const ExpenseForm = () => {
   // Individual State
-  // const [enteredTitle, setEnteredTitle] = useState('');
-  // const [enteredAmount, setEnteredAmount] = useState('');
-  // const [enteredDate, setEnteredDate] = useState('2019-01-01');
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('2019-01-01');
 
   // Combined State
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredDate: ''
-  });
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: ''
+  // });
 
   const titleChangeHandler = (event) => {
     // Individual State
-    // setEnteredTitle(event.target.value);
+    setEnteredTitle(event.target.value);
 
     // Update state for combined state
     // Copy userInput key value pair and update
@@ -27,9 +27,10 @@ const ExpenseForm = () => {
     // })
 
     // Another better combined state
-    setUserInput((prevState) => {
-      return { ...prevState, enteredTitle: event.target.value }
-    });
+    // Always return the previous updated snapshot
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value }
+    // });
   };
 
   const amountChangeHandler = (event) => {
